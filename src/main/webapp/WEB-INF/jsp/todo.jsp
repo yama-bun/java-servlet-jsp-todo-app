@@ -53,7 +53,7 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 		<label for="day">期日</label>
 		<input type="text" name="day">
 		<input type="submit" value="作成">
-		<a href="/todo/Main">更新</a>
+		<a class="btn" href="/todo/Main">更新</a>
 	</form>
 	<ul>
 	<c:forEach var="memo" items="${memoList}">
