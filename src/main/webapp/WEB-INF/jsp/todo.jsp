@@ -70,7 +70,7 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 					</form>
 					<form action="/todo/DeleteMemo" method="post">
 						<input type="hidden" name="id" value="<c:out value="${memo.id }"/>">
-						<input class="btn" type="submit" value="削除">
+						<input class="btn" type="submit" value="削除" onclick="return checkDelete()">
 					</form>
 				</div>
 			</c:when>
@@ -80,7 +80,7 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 				<div class="inline">
 					<form action="/todo/DeleteMemo" method="post">
 						<input type="hidden" name="id" value="<c:out value="${memo.id }"/>">
-						<input class="btn" type="submit" value="削除">
+						<input class="btn" type="submit" value="削除" onclick="return checkDelete()">
 					</form>
 				</div>
 			</c:otherwise>
@@ -94,5 +94,14 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 	<p class="error">名前を入力してください。</p>
 <% } %>
 	<a href="index.jsp">戻る</a>
+	<script>
+		function checkDelete() {
+				if (window.confirm('削除してよろしいですか？')) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+	</script>
 </body>
 </html>
